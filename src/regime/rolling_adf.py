@@ -35,13 +35,3 @@ def rolling_adf(
 if __name__ == "__main__":
     rolling_adf()
 
-
-import pandas as pd
-
-df = pd.read_parquet("data/processed/with_regime.parquet")
-
-# How many times ADF says stationary vs not
-print(df["stationary_regime"].value_counts())
-
-# Look at recent values
-print(df[["spread", "adf_pvalue", "stationary_regime"]].tail(10))
